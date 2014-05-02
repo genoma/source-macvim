@@ -1,0 +1,11 @@
+--- a/src/auto/configure	Sat Apr 05 12:02:25 2014 +0200
++++ b/src/auto/configure	Sat Apr 05 13:57:03 2014 +0200
+@@ -5880,7 +5880,7 @@
+ 	    rm -f -- "${tmp_mkf}"
+ 	    if test "x$MACOSX" = "xyes" && ${vi_cv_path_python} -c \
+ 		"import sys; sys.exit(${vi_cv_var_python_version} < 2.3)"; then
+-	      vi_cv_path_python_plibs="-framework Python"
++	      vi_cv_path_python_plibs="-F/usr/local/Cellar/python/2.7.6_1/Frameworks -framework Python"
+ 	    else
+ 	      if test "${vi_cv_var_python_version}" = "1.4"; then
+ 		  vi_cv_path_python_plibs="${PYTHON_CONFDIR}/libModules.a ${PYTHON_CONFDIR}/libPython.a ${PYTHON_CONFDIR}/libObjects.a ${PYTHON_CONFDIR}/libParser.a"
