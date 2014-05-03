@@ -15,7 +15,7 @@ The `./compile-vim.sh` is a simple script that can be used to automate the Vim s
 
 The script interactively present you a few options:
 
-- Update Vim source files
+- Update MacVim source files
 - Apply patch for Homebrew Python 2.7.X
 - Configure Vim with 3 possible configurations:
 	- Complete -> Python/Ruby/Lua/Perl support
