@@ -9,7 +9,9 @@ The solution is to **patch** the `src/auto/configure` with the correct path:
 
 ## Script
 
-The `./compile-vim.sh` is a simple script that can be used to automate the Vim source compilation, it keeps your `~/vim` source `hg` repo up to date, it patches the `configure` script and it compiles and install vim in `/usr/local/bin`.
+The `./compile-vim.sh` is a simple script that can be used to automate the MacVim source compilation, it patches the `configure` script to build it with Homebrew Python version.
+
+#### The MacVim sources need to be located in ~/macvim
 
 ## Script option
 
