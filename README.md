@@ -11,7 +11,7 @@ The solution is to **patch** the `src/auto/configure` with the correct path:
 
 The `./compile-vim.sh` is a simple script that can be used to automate the MacVim source compilation, it patches the `configure` script to build it with Homebrew Python version.
 
-#### The MacVim sources need to be located in ~/macvim
+#### The MacVim sources need to be located in `~/macvim`
 
 ## Script option
 
