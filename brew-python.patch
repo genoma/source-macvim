@@ -5,7 +5,7 @@
  	    if test "x$MACOSX" = "xyes" && ${vi_cv_path_python} -c \
  		"import sys; sys.exit(${vi_cv_var_python_version} < 2.3)"; then
 -	      vi_cv_path_python_plibs="-framework Python"
-+	      vi_cv_path_python_plibs="-F/usr/local/Cellar/python/2.7.6_1/Frameworks -framework Python"
++	      vi_cv_path_python_plibs="-F/usr/local/Cellar/python/2.7.8/Frameworks -framework Python"
  	    else
  	      if test "${vi_cv_var_python_version}" = "1.4"; then
  		  vi_cv_path_python_plibs="${PYTHON_CONFDIR}/libModules.a ${PYTHON_CONFDIR}/libPython.a ${PYTHON_CONFDIR}/libObjects.a ${PYTHON_CONFDIR}/libParser.a"
