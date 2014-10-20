@@ -19,12 +19,13 @@ else
 fi
 
 echo ""
-echo "$(tput setaf 1) $(tput bold)There are 3 possible MacVim compile configuration: $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold)There are 4 possible MacVim compile configuration: $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *1) Complete -> Python/Ruby/Lua/Perl $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *2) Essential -> Python $(tput sgr 0)"
-echo "$(tput setaf 1) $(tput bold) - *3) Minimal $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold) - *3) Lua $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold) - *4) Minimal $(tput sgr 0)"
 echo ""
-echo -n "$(tput setaf 1)What version would you like to compile? $(tput bold)[1/$(tput setaf 4)2$(tput setaf 1)/3] $(tput sgr 0)"
+echo -n "$(tput setaf 1)What version would you like to compile? $(tput bold)[1/$(tput setaf 4)2$(tput setaf 1)/3/4] $(tput sgr 0)"
 read compile
 
 
@@ -43,6 +44,16 @@ if [ "$compile" == "1" ]; then
               --with-compiledby=jenoma@gmail.com\
               --with-macarchs="x86_64"
 elif [ "$compile" == "3" ]; then
+  # minimal compilation with huge no lua/ruby/perl/python
+  ./configure --enable-multibyte\
+              --with-tlib=ncurses\
+              --with-features=huge\
+              --enable-luainterp\
+              --with-lua-prefix=/usr/local\
+              --disable-netbeans\
+              --with-compiledby=jenoma@gmail.com\
+              --with-macarchs="x86_64"
+elif [ "$compile" == "4" ]; then
   # minimal compilation with huge no lua/ruby/perl/python
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
