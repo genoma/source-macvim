@@ -20,8 +20,8 @@ fi
 
 echo ""
 echo "$(tput setaf 1) $(tput bold)There are 4 possible MacVim compile configuration: $(tput sgr 0)"
-echo "$(tput setaf 1) $(tput bold) - *1) Complete -> Python/Ruby/Lua/Perl $(tput sgr 0)"
-echo "$(tput setaf 1) $(tput bold) - *2) Essential -> Python $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold) - *1) Complete -> HOMEBREW Python/Ruby/Lua/Perl $(tput sgr 0)"
+echo "$(tput setaf 1) $(tput bold) - *2) Complete -> Yosemite Python/Ruby/Perl $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *3) Lua $(tput sgr 0)"
 echo "$(tput setaf 1) $(tput bold) - *4) Minimal $(tput sgr 0)"
 echo ""
@@ -31,20 +31,19 @@ read compile
 
 echo ""
 if [ "$compile" == "1" ]; then
-  # complete compilation with lua/ruby/python/perl
+  # Complete with homebrew lua/ruby/python
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
               --enable-rubyinterp\
               --enable-luainterp\
               --with-lua-prefix=/usr/local\
-              --enable-perlinterp\
               --enable-pythoninterp\
               --disable-netbeans\
               --with-compiledby=jenoma@gmail.com\
               --with-macarchs="x86_64"
 elif [ "$compile" == "3" ]; then
-  # minimal compilation with huge no lua/ruby/perl/python
+  # minimal compilation with huge and Lua
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
@@ -54,7 +53,7 @@ elif [ "$compile" == "3" ]; then
               --with-compiledby=jenoma@gmail.com\
               --with-macarchs="x86_64"
 elif [ "$compile" == "4" ]; then
-  # minimal compilation with huge no lua/ruby/perl/python
+  # basic no linked dependencies
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
@@ -62,12 +61,13 @@ elif [ "$compile" == "4" ]; then
               --with-compiledby=jenoma@gmail.com\
               --with-macarchs="x86_64"
 else
-  # essential compilation whith just Homebrew Python 2.7.X
+  #  compilation whith just Vanilla Python and Ruby
   ./configure --enable-multibyte\
               --with-tlib=ncurses\
               --with-features=huge\
-              --disable-netbeans\
+              --enable-rubyinterp\
               --enable-pythoninterp\
+              --disable-netbeans\
               --with-compiledby=jenoma@gmail.com\
               --with-macarchs="x86_64"
 fi
