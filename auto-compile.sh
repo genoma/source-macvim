@@ -16,7 +16,7 @@ echo "n
 2
 y" | ./compile-macvim.sh
 cd ~/macvim/src/MacVim/build/Release/
-tar -cvzf MacVim-Yosemite-Python-Ruby-Perl.tar.gz MacVim.app
+tar -cvzf MacVim-Yosemite-Python-Ruby.tar.gz MacVim.app
 
 # Complete with Homebrew Python, Ruby, Lua
 brew link ruby
@@ -25,4 +25,4 @@ echo "y
 1
 y" | ./compile-macvim.sh
 cd ~/macvim/src/MacVim/build/Release/
-tar -cvzf MacVim-Homebrew-Python-Ruby-Lua-Perl-Latest.tar.gz MacVim.app
+tar -cvzf MacVim-Homebrew-Python-Ruby-Lua-Latest.tar.gz MacVim.app
